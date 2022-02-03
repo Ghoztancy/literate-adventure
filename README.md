@@ -1,5 +1,3 @@
 # literate-adventure
 
-
-
-maven star
+update 2

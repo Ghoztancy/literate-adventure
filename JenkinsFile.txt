@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Ghoztancy/literate-adventure.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                Sh "mvn compile"
+            }
+        }
+        stage('Test') {
+            steps {
+                Sh "mvn test"
+            }
+            post {
+                always {
+                    junit '**/TEST*.xml'
+                }
+            }
+        }
+    }
+

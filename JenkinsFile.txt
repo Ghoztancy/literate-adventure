@@ -28,7 +28,7 @@ pipeline {
 	}
         stage('Robot Framework System tests with Selenium') {
             steps {
-                sh 'robot --variable BROWSER:headlesschrome -d Results  Tests/webtest.robot'
+                sh 'robot --variable BROWSER:headlesschrome -d Results  Tests'
             }
             post {
                 always {
@@ -36,7 +36,7 @@ pipeline {
                           step(
                                 [
                                   $class              : 'RobotPublisher',
-                                  outputPath          : 'results',
+                                  outputPath          : 'Results',
                                   outputFileName      : '**/output.xml',
                                   reportFileName      : '**/report.html',
                                   logFileName         : '**/log.html',
@@ -45,7 +45,7 @@ pipeline {
                                   unstableThreshold   : 40,
                                   otherFiles          : "**/*.png,**/*.jpg",
                                 ]
-                          )
+                            )
                     }
                 }
             }

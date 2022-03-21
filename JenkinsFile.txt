@@ -15,10 +15,16 @@ pipeline {
             steps {
                 sh "mvn test"
             }
+        stage('Api testing') {
+            steps {
+                sh 'newman run Restful_Booker_Facit.postman_collection.json --environment Restful_Booker.postman_environment.json --reporters junit'
+            }
             post {
                 always {
-                    junit '**/TEST*.xml'
+                        junit '**/*xml'
+                    }
                 }
+
             }
         }
     }

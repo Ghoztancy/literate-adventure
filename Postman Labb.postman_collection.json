@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "74d3a260-0b59-45d1-bf0c-ec9f71d19694",
+		"name": "Postman Labb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Part 1",
+			"item": [
+				{
+					"name": "List users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.test(\"Status code 200\", () => pm.expect(responseCode.code).to.equal(200));",
+									"pm.test(\"Responsetime under 2 sec\", () => pm.expect(pm.response.responseTime).to.be.below(2000));",
+									"pm.test(\"6 users found\", () => pm.expect(jsonData.data.length).to.equal(6));",
+									"pm.test(\"Avatar not null\", () => pm.expect(jsonData.data[1].avatar).to.not.equal(null));",
+									"pm.test(\"LastName equal Wong\", () => pm.expect(jsonData.data[2].last_name).to.equal(\"Wong\"));",
+									"pm.test(\"SomeWhere there is eve\", () => pm.expect(pm.response.text()).to.include(\"eve\"));",
+									"pm.globals.set(\"FifthId\", jsonData.data[4].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.test(\"Status code 200\", () => pm.expect(responseCode.code).to.equal(200));",
+									"pm.test(\"Responsetime under 2 sec\", () => pm.expect(pm.response.responseTime).to.be.below(2000));",
+									"pm.test(\"User id equals global\", () => pm.expect(jsonData.data.id).to.equal(pm.globals.get(\"FifthId\")));",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/{{FifthId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{FifthId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.test(\"Status code 201\", () => pm.expect(responseCode.code).to.equal(201));",
+									"pm.test(\"Responsetime under 2 sec\", () => pm.expect(pm.response.responseTime).to.be.below(2000));",
+									"pm.test(\"Id not null\", () => pm.expect(jsonData.id).to.not.equal(null));",
+									"pm.test(\"Name equal Liibaan\", () => pm.expect(jsonData.name).to.equal(\"Liibaan\"));",
+									"pm.test(\"Dream job\", () => pm.expect(jsonData.job).to.equal(\"Mjukvarutestare\"));",
+									"pm.globals.set(\"FifthId\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Liibaan\",\n    \"job\": \"Mjukvarutestare\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.test(\"Status code 200\", () => pm.expect(responseCode.code).to.equal(200));",
+									"pm.test(\"Responsetime under 2 sec\", () => pm.expect(pm.response.responseTime).to.be.below(2000));",
+									"pm.test(\"Dream job\", () => pm.expect(jsonData.job).to.equal(\"Postman Master\"));",
+									"pm.test(\"update at not null\", () => pm.expect(jsonData.updateAt).to.not.equal(null));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Liibaan\",\n    \"job\": \"Postman Master\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code 204\", () => pm.expect(responseCode.code).to.equal(204));",
+									"pm.test(\"Responsetime under 2 sec\", () => pm.expect(pm.response.responseTime).to.be.below(2000));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/{{FifthId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{FifthId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

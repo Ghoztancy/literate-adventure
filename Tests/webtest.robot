@@ -5,9 +5,13 @@ Test Teardown  Close Browser
 Library  SeleniumLibrary
 
 
+*** Variables ***
+${BROWSER} = chrome
+
+
 *** Keywords ***
 Open Webbrowser
-    Open Browser  about:blank  chrome
+    Open Browser  about:blank  ${BROWSER}
     Maximize Browser Window
     Go To  http://rental16.infotiv.net/webpage/html/gui/index.php
     Wait Until Page Contains  When do you want to make your trip?

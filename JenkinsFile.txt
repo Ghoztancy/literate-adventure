@@ -17,7 +17,7 @@ pipeline {
             }
         stage('Api testing') {
             steps {
-                sh 'newman run Restful_Booker_Facit.postman_collection.json --environment Restful_Booker.postman_environment.json --reporters junit'
+                sh 'newman run Postman Labb.postman_collection.json --environment Postman Environment.postman_environment.json --reporters junit'
             }
             post {
                 always {

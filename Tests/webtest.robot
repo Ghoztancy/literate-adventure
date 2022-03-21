@@ -19,9 +19,9 @@ Inputs Valid New User Creadentials
     Wait Until Page Contains  Create a new user
     input text  xpath:/html/body/div/div[2]/form/div[1]/input[1]  Tom
     input text  xpath:/html/body/div/div[2]/form/div[1]/input[2]  Bob
-    input text  xpath:/html/body/div/div[2]/form/div[1]/input[3]  07297445294
-    input text  xpath:/html/body/div/div[2]/form/div[1]/input[4]  Samy9@gmail.com
-    input text  xpath:/html/body/div/div[2]/form/div[1]/input[5]  Samy9@gmail.com
+    input text  xpath:/html/body/div/div[2]/form/div[1]/input[3]  07297455294
+    input text  xpath:/html/body/div/div[2]/form/div[1]/input[4]  Samy10@gmail.com
+    input text  xpath:/html/body/div/div[2]/form/div[1]/input[5]  Samy10@gmail.com
     input text  xpath:/html/body/div/div[2]/form/div[1]/input[6]  SteveKarl
     input text  xpath:/html/body/div/div[2]/form/div[1]/input[7]  SteveKarl
 

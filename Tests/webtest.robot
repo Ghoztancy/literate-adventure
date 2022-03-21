@@ -4,10 +4,8 @@ Test Teardown  Close Browser
 
 Library  SeleniumLibrary
 
-
 *** Variables ***
-${BROWSER} = chrome
-
+${BROWSER} =  chrome
 
 *** Keywords ***
 Open Webbrowser

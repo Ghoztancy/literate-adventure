@@ -5,7 +5,7 @@ Test Teardown  Close Browser
 Library  SeleniumLibrary
 
 *** Variables ***
-${BROWSER} =  chrome
+${BROWSER} =  headlesschrome
 
 *** Keywords ***
 Open Webbrowser

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.9.10 on darwin)" generated="20220321 13:58:57.849" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.9.10 on darwin)" generated="20220321 14:03:15.277" rpa="false" schemaversion="2">
 <suite id="s1" name="Webtest" source="/Users/lyban/Desktop/auto21/tests/webtest.robot">
 <test id="s1-t1" name="User Can Book a Car">
 <kw name="Open Webbrowser" type="SETUP">
@@ -7,171 +7,125 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220321 13:58:57.970" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20220321 13:58:57.970" endtime="20220321 13:59:24.212"/>
+<msg timestamp="20220321 14:03:15.392" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220321 14:03:15.391" endtime="20220321 14:03:16.502"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220321 13:59:24.213" endtime="20220321 13:59:24.331"/>
+<status status="PASS" starttime="20220321 14:03:16.502" endtime="20220321 14:03:16.608"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>http://rental16.infotiv.net/webpage/html/gui/index.php</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220321 13:59:24.332" level="INFO">Opening url 'http://rental16.infotiv.net/webpage/html/gui/index.php'</msg>
-<status status="PASS" starttime="20220321 13:59:24.332" endtime="20220321 13:59:24.941"/>
+<msg timestamp="20220321 14:03:16.609" level="INFO">Opening url 'http://rental16.infotiv.net/webpage/html/gui/index.php'</msg>
+<status status="PASS" starttime="20220321 14:03:16.608" endtime="20220321 14:03:16.885"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>When do you want to make your trip?</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220321 13:59:24.941" endtime="20220321 13:59:25.057"/>
+<status status="PASS" starttime="20220321 14:03:16.885" endtime="20220321 14:03:16.980"/>
 </kw>
-<status status="PASS" starttime="20220321 13:58:57.969" endtime="20220321 13:59:25.058"/>
+<status status="PASS" starttime="20220321 14:03:15.391" endtime="20220321 14:03:16.980"/>
 </kw>
 <kw name="Given logsin with valid credentials">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath:/html/body/header/div/div/div[2]/form/div[1]/input[1]</arg>
 <arg>Samy2@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220321 13:59:25.059" level="INFO">Typing text 'Samy2@gmail.com' into text field 'xpath:/html/body/header/div/div/div[2]/form/div[1]/input[1]'.</msg>
-<status status="PASS" starttime="20220321 13:59:25.058" endtime="20220321 13:59:25.230"/>
+<msg timestamp="20220321 14:03:16.981" level="INFO">Typing text 'Samy2@gmail.com' into text field 'xpath:/html/body/header/div/div/div[2]/form/div[1]/input[1]'.</msg>
+<status status="PASS" starttime="20220321 14:03:16.981" endtime="20220321 14:03:17.135"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath:/html/body/header/div/div/div[2]/form/div[1]/input[2]</arg>
 <arg>SteveKarl</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220321 13:59:25.230" level="INFO">Typing text 'SteveKarl' into text field 'xpath:/html/body/header/div/div/div[2]/form/div[1]/input[2]'.</msg>
-<status status="PASS" starttime="20220321 13:59:25.230" endtime="20220321 13:59:25.309"/>
+<msg timestamp="20220321 14:03:17.136" level="INFO">Typing text 'SteveKarl' into text field 'xpath:/html/body/header/div/div/div[2]/form/div[1]/input[2]'.</msg>
+<status status="PASS" starttime="20220321 14:03:17.136" endtime="20220321 14:03:17.200"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>//*[@id="login"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220321 13:59:25.309" level="INFO">Clicking button '//*[@id="login"]'.</msg>
-<status status="PASS" starttime="20220321 13:59:25.309" endtime="20220321 13:59:25.611"/>
+<msg timestamp="20220321 14:03:17.200" level="INFO">Clicking button '//*[@id="login"]'.</msg>
+<status status="PASS" starttime="20220321 14:03:17.200" endtime="20220321 14:03:17.475"/>
 </kw>
-<status status="PASS" starttime="20220321 13:59:25.058" endtime="20220321 13:59:25.611"/>
+<status status="PASS" starttime="20220321 14:03:16.980" endtime="20220321 14:03:17.475"/>
 </kw>
 <kw name="When Enter Date">
 <kw name="Press Key" library="SeleniumLibrary">
 <arg>xpath://*[@id="start"]</arg>
 <arg>0404</arg>
 <doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
-<msg timestamp="20220321 13:59:25.611" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<status status="PASS" starttime="20220321 13:59:25.611" endtime="20220321 13:59:25.662"/>
+<msg timestamp="20220321 14:03:17.476" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<status status="PASS" starttime="20220321 14:03:17.476" endtime="20220321 14:03:17.525"/>
 </kw>
 <kw name="Press Key" library="SeleniumLibrary">
 <arg>xpath://*[@id="end"]</arg>
 <arg>0502</arg>
 <doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
-<msg timestamp="20220321 13:59:25.662" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<status status="PASS" starttime="20220321 13:59:25.662" endtime="20220321 13:59:25.709"/>
+<msg timestamp="20220321 14:03:17.525" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<status status="PASS" starttime="20220321 14:03:17.525" endtime="20220321 14:03:17.560"/>
 </kw>
-<status status="PASS" starttime="20220321 13:59:25.611" endtime="20220321 13:59:25.709"/>
+<status status="PASS" starttime="20220321 14:03:17.476" endtime="20220321 14:03:17.560"/>
 </kw>
 <kw name="Press Continue">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>//*[@id="continue"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220321 13:59:25.710" level="INFO">Clicking button '//*[@id="continue"]'.</msg>
-<status status="PASS" starttime="20220321 13:59:25.709" endtime="20220321 13:59:26.262"/>
+<msg timestamp="20220321 14:03:17.561" level="INFO">Clicking button '//*[@id="continue"]'.</msg>
+<status status="PASS" starttime="20220321 14:03:17.561" endtime="20220321 14:03:18.151"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>What would you like to drive?</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220321 13:59:26.262" endtime="20220321 13:59:26.274"/>
+<status status="PASS" starttime="20220321 14:03:18.151" endtime="20220321 14:03:18.162"/>
 </kw>
-<status status="PASS" starttime="20220321 13:59:25.709" endtime="20220321 13:59:26.274"/>
+<status status="PASS" starttime="20220321 14:03:17.560" endtime="20220321 14:03:18.162"/>
 </kw>
 <kw name="Select Tesla Roadester">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>//*[@id="bookRoadsterpass2"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220321 13:59:26.275" level="INFO">Clicking button '//*[@id="bookRoadsterpass2"]'.</msg>
-<status status="PASS" starttime="20220321 13:59:26.275" endtime="20220321 13:59:26.404"/>
+<msg timestamp="20220321 14:03:18.162" level="INFO">Clicking button '//*[@id="bookRoadsterpass2"]'.</msg>
+<msg timestamp="20220321 14:03:18.327" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220321 14:03:18.330" level="FAIL">Button with locator '//*[@id="bookRoadsterpass2"]' not found.</msg>
+<status status="FAIL" starttime="20220321 14:03:18.162" endtime="20220321 14:03:18.330"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Confirm booking of Tesla Roadster</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220321 13:59:26.404" endtime="20220321 13:59:26.412"/>
+<status status="NOT RUN" starttime="20220321 14:03:18.330" endtime="20220321 14:03:18.330"/>
 </kw>
-<status status="PASS" starttime="20220321 13:59:26.275" endtime="20220321 13:59:26.412"/>
+<status status="FAIL" starttime="20220321 14:03:18.162" endtime="20220321 14:03:18.330"/>
 </kw>
 <kw name="User enters CardInfo">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath:/html/body/div/div[2]/div[2]/form/input[1]</arg>
-<arg>2301729813382914</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220321 13:59:26.413" level="INFO">Typing text '2301729813382914' into text field 'xpath:/html/body/div/div[2]/div[2]/form/input[1]'.</msg>
-<status status="PASS" starttime="20220321 13:59:26.413" endtime="20220321 13:59:26.489"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath:/html/body/div/div[2]/div[2]/form/input[2]</arg>
-<arg>Tom</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220321 13:59:26.489" level="INFO">Typing text 'Tom' into text field 'xpath:/html/body/div/div[2]/div[2]/form/input[2]'.</msg>
-<status status="PASS" starttime="20220321 13:59:26.489" endtime="20220321 13:59:26.537"/>
-</kw>
-<kw name="Press Key" library="SeleniumLibrary">
-<arg>xpath://*[@id="confirmSelection"]/form/select[1]</arg>
-<arg>5</arg>
-<doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
-<msg timestamp="20220321 13:59:26.538" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<status status="PASS" starttime="20220321 13:59:26.538" endtime="20220321 13:59:26.572"/>
-</kw>
-<kw name="Press Key" library="SeleniumLibrary">
-<arg>xpath://*[@id="confirmSelection"]/form/select[2]</arg>
-<arg>2024</arg>
-<doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
-<msg timestamp="20220321 13:59:26.572" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<status status="PASS" starttime="20220321 13:59:26.572" endtime="20220321 13:59:26.608"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath:/html/body/div/div[2]/div[2]/form/input[3]</arg>
-<arg>234</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220321 13:59:26.609" level="INFO">Typing text '234' into text field 'xpath:/html/body/div/div[2]/div[2]/form/input[3]'.</msg>
-<status status="PASS" starttime="20220321 13:59:26.608" endtime="20220321 13:59:26.660"/>
-</kw>
-<status status="PASS" starttime="20220321 13:59:26.412" endtime="20220321 13:59:26.661"/>
+<status status="NOT RUN" starttime="20220321 14:03:18.330" endtime="20220321 14:03:18.330"/>
 </kw>
 <kw name="Then Press Confrim">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="confirm"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220321 13:59:26.661" level="INFO">Clicking button '//*[@id="confirm"]'.</msg>
-<status status="PASS" starttime="20220321 13:59:26.661" endtime="20220321 13:59:26.745"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>A Tesla Roadster is now ready for pickup 2022-04-04</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220321 13:59:26.745" endtime="20220321 13:59:26.754"/>
-</kw>
-<status status="PASS" starttime="20220321 13:59:26.661" endtime="20220321 13:59:26.754"/>
+<status status="NOT RUN" starttime="20220321 14:03:18.330" endtime="20220321 14:03:18.330"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220321 13:59:26.754" endtime="20220321 13:59:26.816"/>
+<status status="PASS" starttime="20220321 14:03:18.331" endtime="20220321 14:03:18.391"/>
 </kw>
 <doc>Test Book Car</doc>
 <tag>VG_test</tag>
-<status status="PASS" starttime="20220321 13:58:57.969" endtime="20220321 13:59:26.816"/>
+<status status="FAIL" starttime="20220321 14:03:15.391" endtime="20220321 14:03:18.391">Button with locator '//*[@id="bookRoadsterpass2"]' not found.</status>
 </test>
-<status status="PASS" starttime="20220321 13:58:57.850" endtime="20220321 13:59:26.817"/>
+<status status="FAIL" starttime="20220321 14:03:15.277" endtime="20220321 14:03:18.392"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">VG_test</stat>
+<stat pass="0" fail="1" skip="0">VG_test</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Webtest">Webtest</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Webtest">Webtest</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220321 13:59:25.611" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<msg timestamp="20220321 13:59:25.662" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<msg timestamp="20220321 13:59:26.538" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<msg timestamp="20220321 13:59:26.572" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<msg timestamp="20220321 14:03:17.476" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<msg timestamp="20220321 14:03:17.525" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
 </errors>
 </robot>

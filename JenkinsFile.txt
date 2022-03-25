@@ -29,7 +29,7 @@ pipeline {
 	
    	stage('Code coverage'){
 		steps {
-                Sh 'mvn clean cobertura:cobertura'
+                sh 'mvn clean cobertura:cobertura'
 	}
     post {
         always {

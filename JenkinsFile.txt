@@ -27,13 +27,11 @@ pipeline {
                 }
 	}
 	node(Code Coverage) {
-  ...
-  // Here we are using the istanbulCoberturaAdapter
+
   publishCoverage adapters: [istanbulCoberturaAdapter('cobertura-coverage.xml')],
     sourceFileResolver: sourceFiles('NEVER_STORE'),
     calculateDiffForChangeRequests: true
 
-  ...
 }
         stage('Robot Framework System tests with Selenium') {
             steps {

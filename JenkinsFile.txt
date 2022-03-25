@@ -33,7 +33,7 @@ pipeline {
 	}
     post {
         always {
-            junit '**/nosetests.xml'
+            junit '**/pom.xml'
             step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/pom.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
         }
     }

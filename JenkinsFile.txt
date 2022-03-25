@@ -26,15 +26,14 @@ pipeline {
                     }
                 }
 	}
-	stage('Code Coverage') {
-        steps {
-            sh 'mvn clean cobertura:cobertura'
-        }
-  		post {
-        		  always {
-cobertura autoUpdateHealth: false, autoUpdateStability: false, conditionalCoverageTargets: '70, 0, 0', failUnhealthy: false, failUnstable: false, lineCoverageTargets: '80, 0, 0', maxNumberOfBuilds: 0, methodCoverageTargets: '80, 0, 0', sourceEncoding: 'ASCII', zoomCoverageChart: false
-        }
-    }
+	node(Code Coverage) {
+  ...
+  // Here we are using the istanbulCoberturaAdapter
+  publishCoverage adapters: [istanbulCoberturaAdapter('cobertura-coverage.xml')],
+    sourceFileResolver: sourceFiles('NEVER_STORE'),
+    calculateDiffForChangeRequests: true
+
+  ...
 }
         stage('Robot Framework System tests with Selenium') {
             steps {
